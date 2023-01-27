@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        tools:context=".MainActivity">
+
+        <ImageView
+            android:id="@+id/icon_edit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            app:srcCompat="@drawable/ic_baseline_edit"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/converter"
+            app:layout_constraintBottom_toBottomOf="@id/converter" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/converter"
+            android:layout_height="wrap_content"
+            android:layout_width="160dp"
+            android:hint="@string/enter_value"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toEndOf="@id/icon_edit_text"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/converter_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:text="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/equals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/equals"
+            android:textSize="24sp"
+            android:layout_marginStart="16dp"
+            style="@style/Widget.Converter.TextView"
+            app:layout_constraintStart_toEndOf="@+id/converter"
+            app:layout_constraintTop_toTopOf="@+id/converter"
+            app:layout_constraintBottom_toBottomOf="@id/converter" />
+
+        <TextView
+            android:id="@+id/answer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.Converter.TextView"
+            app:layout_constraintStart_toEndOf="@+id/equals"
+            app:layout_constraintBottom_toBottomOf="@id/equals"
+            app:layout_constraintTop_toTopOf="@id/equals"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="0.03381" />
+
+        <ImageView
+            android:id="@+id/icon_calculate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            app:srcCompat="@drawable/ic_baseline_calculate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/select_conversion_text"
+            app:layout_constraintBottom_toBottomOf="@id/select_conversion_text" />
+
+        <TextView
+            android:id="@+id/select_conversion_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select conversion option"
+            android:layout_marginTop="16dp"
+            style="@style/Widget.Converter.TextView"
+            app:layout_constraintStart_toStartOf="@id/converter"
+            app:layout_constraintTop_toBottomOf="@id/converter" />
+
+        <RadioGroup
+            android:id="@+id/select_conversion_option"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkedButton="@id/to_fluid_ounces"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="@id/select_conversion_text"
+            app:layout_constraintTop_toBottomOf="@id/select_conversion_text">
+
+            <RadioButton
+                android:id="@+id/to_fluid_ounces"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ml_to_fl_oz" />
+
+            <RadioButton
+                android:id="@+id/to_milliliters"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fl_oz_to_ml" />
+
+        </RadioGroup>
+
+        <ImageView
+            android:id="@+id/icon_round_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            app:srcCompat="@drawable/ic_round_up"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/round_up_switch"
+            app:layout_constraintBottom_toBottomOf="@id/round_up_switch" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/round_up_switch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:minHeight="48dp"
+            android:text="@string/round_up_value"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/select_conversion_option"
+            app:layout_constraintTop_toBottomOf="@id/select_conversion_option" />
+
+        <Button
+            android:id="@+id/calculate_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/calculate"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/round_up_switch"
+            app:layout_constraintTop_toBottomOf="@+id/round_up_switch" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Converter</string>
+    <string name="enter_value">Enter value</string>
+    <string name="equals">=</string>
+    <string name="ml_to_fl_oz"><![CDATA[ml -> FL OZ]]></string>
+    <string name="fl_oz_to_ml"><![CDATA[FL OZ -> ml]]></string>
+    <string name="round_up_value">Round up value?</string>
+    <string name="calculate">calculate</string>
+
+</resources>
